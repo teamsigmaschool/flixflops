@@ -109,8 +109,8 @@ export async function getMovieDetails(movieId) {
     cast: [...(credits.cast || [])]
       .sort((a, b) => b.name.localeCompare(a.name))
       // bug 7 cast order below here
-      // .slice(0, 10) // Fixed
-      .slice(0, 2) // Broken
+      .slice(0, 10) // Fixed
+      // .slice(0, 2) // Broken
       // bug 7 cast order above here
       .map((person) => ({
         id: person.id,

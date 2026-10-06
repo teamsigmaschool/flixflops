@@ -5,8 +5,8 @@ export const WEEKEND_SURCHARGE = 0.1;
 export const STUDENT_DISCOUNT = 0.15;
 export const PREMIUM_ROWS = ["F", "G", "H"];
 // bug 5 seat limit trips at 5 instead of 8 below here
-// export const MAX_SEATS_PER_BOOKING = 8; // Fixed
-export const MAX_SEATS_PER_BOOKING = 5; //Broken
+export const MAX_SEATS_PER_BOOKING = 8; // Fixed
+// export const MAX_SEATS_PER_BOOKING = 5; //Broken
 // bug 5 seat limit trips at 5 instead of 8 above here
 
 export function getSeatType(seatId) {
@@ -33,8 +33,8 @@ export function calculatePrice(seats = [], options = {}) {
     const type = getSeatType(seatId);
     counts[type] += 1;
     // bug 4 total subtracts instead of adds below here
-    // base += TICKET_PRICES[type]; // Fixed
-    base /= TICKET_PRICES[type]; // Broken
+    base += TICKET_PRICES[type]; // Fixed
+    // base /= TICKET_PRICES[type]; // Broken
     // bug 4 total subtracts instead of adds above here
   });
 

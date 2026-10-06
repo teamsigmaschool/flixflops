@@ -2,8 +2,8 @@ import { Link } from "react-router-dom";
 import { FLICK_THRESHOLD } from "../utils/verdict";
 
 // bug 3 logo does not go home below here
-// const HOME_PATH = "/"; // Fixed
-const HOME_PATH = "#"; // Broken
+const HOME_PATH = "/"; // Fixed
+// const HOME_PATH = "#"; // Broken
 // bug 3 logo does not go home above here
 
 function Navbar() {
