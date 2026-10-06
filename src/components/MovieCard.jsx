@@ -1,5 +1,8 @@
 import { Link } from "react-router-dom";
-import { getImageUrl } from "./movieApi";
+// bug 1 wrong import path below here
+import { getImageUrl } from "../services/movieApi"; // Fixed
+// import { getImageUrl } from "./movieApi"; // Broken
+// bug 1 wrong import path above here
 import { formatYear } from "../utils/formatDate";
 import { getVerdict } from "../utils/verdict";
 import posterPlaceholder from "../assets/images/poster-placeholder.svg";

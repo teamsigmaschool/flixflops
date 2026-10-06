@@ -156,7 +156,13 @@ function MovieDetails() {
               </li>
               <li>
                 <span>Verdict</span>
-                <strong>{verdict}</strong>
+                {/* bug 2 whole object passed instead of its value below here */}
+                {/* Fixed */}
+                <strong>{verdict.label}</strong>
+                {/* Broken */}
+                {/* <strong>{verdict}</strong> */}
+                {/* bug 2 whole object passed instead of its value above here */}
+                {verdict.emoji}
               </li>
             </ul>
 

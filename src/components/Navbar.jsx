@@ -1,7 +1,10 @@
 import { Link } from "react-router-dom";
 import { FLICK_THRESHOLD } from "../utils/verdict";
 
-const HOME_PATH = "#";
+// bug 3 logo does not go home below here
+// const HOME_PATH = "/"; // Fixed
+const HOME_PATH = "#"; // Broken
+// bug 3 logo does not go home above here
 
 function Navbar() {
   return (
@@ -20,9 +23,6 @@ function Navbar() {
             Flicks <em>&amp;</em> Flops
           </span>
         </Link>
-        <p className="navbar__rule">
-          Above {FLICK_THRESHOLD.toFixed(1)} is a flick 🍿
-        </p>
       </div>
     </header>
   );

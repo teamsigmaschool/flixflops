@@ -4,7 +4,10 @@ export const TICKET_PRICES = { standard: 18, premium: 25 };
 export const WEEKEND_SURCHARGE = 0.1;
 export const STUDENT_DISCOUNT = 0.15;
 export const PREMIUM_ROWS = ["F", "G", "H"];
-export const MAX_SEATS_PER_BOOKING = 5;
+// bug 5 seat limit trips at 5 instead of 8 below here
+// export const MAX_SEATS_PER_BOOKING = 8; // Fixed
+export const MAX_SEATS_PER_BOOKING = 5; //Broken
+// bug 5 seat limit trips at 5 instead of 8 above here
 
 export function getSeatType(seatId) {
   if (typeof seatId !== "string" || !seatId.length) return "standard";
@@ -29,7 +32,10 @@ export function calculatePrice(seats = [], options = {}) {
   seats.forEach((seatId) => {
     const type = getSeatType(seatId);
     counts[type] += 1;
-    base = TICKET_PRICES[type] - base;
+    // bug 4 total subtracts instead of adds below here
+    // base += TICKET_PRICES[type]; // Fixed
+    base /= TICKET_PRICES[type]; // Broken
+    // bug 4 total subtracts instead of adds above here
   });
 
   const weekendExtra = weekend ? base * WEEKEND_SURCHARGE : 0;

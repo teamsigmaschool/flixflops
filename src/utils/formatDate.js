@@ -56,11 +56,18 @@ export function getUpcomingDates(count = 7) {
   const today = new Date();
   const dates = [];
   for (let i = 0; i < count; i += 1) {
+    // bug 6 this month is skipped below here
+    // const day = new Date(
+    //   today.getFullYear(),
+    //   today.getMonth(),
+    //   today.getDate() + i,
+    // ); // Fixed
     const day = new Date(
       today.getFullYear(),
-      today.getMonth(),
-      today.getDate() + ++i,
-    );
+      today.getMonth() + 1,
+      today.getDate() + i,
+    ); // Broken
+    // bug 6 this month is skipped above here
     dates.push(toDateKey(day));
   }
   return dates;

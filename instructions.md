@@ -1,8 +1,6 @@
 # Flicks & Flops
 
-Welcome to Flicks & Flops, a movie booking website built with React, Vite, and the TMDB API
-
-Browse movies, view movie details, pick your seats, and book tickets. Every movie also gets a verdict. Anything rated 7.0 or higher is a Flick 🍿, and everything below 7.0 is a Flop 🍅 🤮
+Welcome to Flicks & Flops, a movie booking website built with React, Vite, and the TMDB API. Browse movies, view movie details, pick your seats, and book tickets.
 
 Some parts of the app are not working correctly and incomplete.
 
@@ -14,21 +12,19 @@ Use the checklists to keep track of where you are. You have 50 minutes to comple
 
 ## Bugs to Fix
 
-☐ **1** The homepage is not loading any movies from the TMDB API
+☐ **1** The website does not load when you navigate there
 
-☐ **2** The movie API is not importing correctly
+☐ **2** Click on any movie. The page is blank instead of showing details
 
-☐ **3** The movie details page shows an unexpected value instead of the movie information
+☐ **3** Clicking the logo does not navigate to the hompage
 
-☐ **4** The booking total is calculated incorrectly when selecting multiple seats
+☐ **4** Go to book a movie. The Total is calcualted wrong.
 
-☐ **5** The "8 seats per booking" warning appears after selecting 5 seats instead of 8
+☐ **5** Choose a movie and showtime to book. After selecting 5 seats the message "8 seats per booking" shows above the Confirm Booking button. We should be able to select 8 seats
 
-☐ **6** Today's date is missing from the booking date picker
+☐ **6** Go to book a movie. The dates don't show for this month
 
-☐ **7** Clicking the Cinema Booking System logo does not return to the homepage
-
-☐ **8** The actors are sorted alphabetically instead of by popularity
+☐ **7** Choose a movie. Only two casts are shown. It should show 10
 
 ## Feature Addition
 

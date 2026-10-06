@@ -1,7 +1,7 @@
 const BASE_URL = "https://api.themoviedb.org/3";
 const IMAGE_BASE = "https://image.tmdb.org/t/p";
 
-const API_KEY = String(import.meta.env.TMDB_API_KEY || "").trim();
+const API_KEY = String(import.meta.env.VITE_TMDB_API_KEY || "").trim();
 const USE_BEARER = API_KEY.startsWith("eyJ");
 
 export const hasApiKey = API_KEY.length > 0;
@@ -107,13 +107,16 @@ export async function getMovieDetails(movieId) {
       (credits.crew || []).find((person) => person.job === "Director")?.name ||
       "",
     cast: [...(credits.cast || [])]
-      .sort((a, b) => a.name.localeCompare(b.name))
-      .slice(0, 10)
+      .sort((a, b) => b.name.localeCompare(a.name))
+      // bug 7 cast order below here
+      // .slice(0, 10) // Fixed
+      .slice(0, 2) // Broken
+      // bug 7 cast order above here
       .map((person) => ({
         id: person.id,
         name: person.name,
         character: person.character || "",
         profilePath: person.profile_path || null,
-      })),
+      })), //Broken
   };
 }

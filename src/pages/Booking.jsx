@@ -123,7 +123,7 @@ function Booking() {
     setSelectedSeats((current) => {
       if (current.includes(seatId))
         return current.filter((item) => item !== seatId);
-      if (current.length >= 5) {
+      if (current.length >= MAX_SEATS_PER_BOOKING) {
         setNotice(`8 seats per booking.`);
         return current;
       }
